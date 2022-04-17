@@ -17,10 +17,16 @@ type Promise struct {
 	finally func()
 }
 
+// Resolver is a function that resolve a promise.
 type Resolver func(v interface{})
+
+// Rejecter is a function that reject a promise.
 type Rejecter func(err error)
 
+// Thener is a function that resolve a promise.
 type Thener func(v interface{}) interface{}
+
+// Catcher is a function that catch an error.
 type Catcher func(err error)
 
 // New creates a new promise.
