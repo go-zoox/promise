@@ -61,6 +61,7 @@ func (p *Promise) start() {
 			}
 			p.ch <- struct{}{}
 		}()
+
 		p.cb(func(v interface{}) {
 			p.result = v
 			p.executeResolvers()
